@@ -1,1 +1,80 @@
-/*Placeholder Text*/
+/* NEED TO IMPORT SCSS/SASS*/
+
+.container{
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.menu{
+  padding: 0;
+  margin: 0;
+  background: black;
+  color: white;
+  li{
+    display: inline-block;
+    list-style: none;
+    padding: 20px;
+    border: 1px solid #000;
+    margin: 0 auto;
+    position: relative;
+    transition: opacity 0.4s ease-in-out;
+    &:hover{ /*Add animation to parent.*/
+      & > ul.first{
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+      ul.first{
+        background: red;
+        left: 50px;
+        top: 56px;
+        position: absolute;
+        visibility: hidden; /*Was display: block*/
+        width: 200px;
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+        
+        li{
+          display: block;
+          &:hover{ /*Add animation to parent.*/
+            & > ul.second{
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      ul.second{
+        background: purple;
+        left: 100%;
+        top: -1px;
+        position: absolute;
+        visibility: hidden; /*Was display: block*/
+        opacity: 0;
+        transition: all .4s ease-in-out;
+        width: 200px;
+        li{
+          display: block;
+          &:hover{ /*Add animation to parent.*/
+            & > ul.third{
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      ul.third{
+        background: green;
+        left: 100%;
+        top: -1px;
+        position: absolute;
+        visibility: hidden; /*Was display: block*/
+        opacity: 0;
+        transition: all .4s ease-in-out;
+        width: 200px;
+        li{
+          display: block;
+        }
+      }
+    }
+  }
